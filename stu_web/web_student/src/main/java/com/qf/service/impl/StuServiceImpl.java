@@ -27,4 +27,27 @@ public class StuServiceImpl implements IStuService {
         }
         return  students;
     }
+
+    @Override
+    public int delOneById(Integer id) {
+        return stuMapper.deleteById(id);
+    }
+
+    @Override
+    public Student queryStuById(Integer id) {
+        Student student = stuMapper.selectById(id);
+        Classes classes = clsFeign.queryByCid(student.getCid());
+        student.setClasses(classes);
+        return student;
+    }
+
+    @Override
+    public List<Classes> getAllClasses() {
+        return clsFeign.queryAllClasses();
+    }
+
+    @Override
+    public int update(Student student) {
+        return stuMapper.updateById(student);
+    }
 }
