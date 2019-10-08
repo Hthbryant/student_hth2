@@ -18,6 +18,7 @@ public class StudentController {
 
     @RequestMapping("/list")
     public String queryAllStudent(ModelMap map){
+        System.out.println("进来了查询学生列表");
         List<Student> studentList = stuService.queryAllStudent();
         map.put("stuList",studentList);
         return "stuList";
