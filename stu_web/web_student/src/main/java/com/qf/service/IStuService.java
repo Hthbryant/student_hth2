@@ -15,4 +15,8 @@ public interface IStuService {
     List<Classes> getAllClasses();
 
     int update(Student student);
+
+    List<Classes> toAdd();
+
+    int addStudent(Student student);
 }

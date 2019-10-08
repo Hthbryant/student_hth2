@@ -21,6 +21,9 @@
             <td th:text="${stu.classes.cname}">班级</td>
             <td><a th:href="|/stu/delOne/${stu.id}|">删除</a><a th:href="|/stu/toUpdate/${stu.id}|">修改</a></td>
         </tr>
+        <tr>
+            <td><a href="/stu/toAdd">添加学生</a></td>
+        </tr>
     </table>
 </body>
 </html>

@@ -53,4 +53,21 @@ public class StudentController {
             return "<script>alert('修改失败！');location.href='/stu/list';</script>";
         }
     }
+
+    @RequestMapping("/toAdd")
+    public String toAdd(ModelMap map){
+        List<Classes> classList = stuService.toAdd();
+        map.put("classList",classList);
+        return "addStu";
+    }
+    @RequestMapping("/add")
+    @ResponseBody
+    public String add(Student student){
+        int result = stuService.addStudent(student);
+        if(result>0){
+            return "<script>alert('添加成功！');location.href='/stu/list';</script>";
+        }else{
+            return "<script>alert('添加失败！');location.href='/stu/list';</script>";
+        }
+    }
 }

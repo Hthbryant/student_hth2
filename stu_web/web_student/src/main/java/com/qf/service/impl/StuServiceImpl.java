@@ -50,4 +50,14 @@ public class StuServiceImpl implements IStuService {
     public int update(Student student) {
         return stuMapper.updateById(student);
     }
+
+    @Override
+    public List<Classes> toAdd() {
+        return clsFeign.queryAllClasses();
+    }
+
+    @Override
+    public int addStudent(Student student) {
+        return stuMapper.insert(student);
+    }
 }
