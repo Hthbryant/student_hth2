@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: web-student
+  datasource:
+    url: jdbc:mysql:///studb1906?serverTimezone=UTC
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
+
+

@@ -1,0 +1,16 @@
+server:
+  port: 20000
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: web-student
+          uri: lb://web-student
+          predicates:
+            - Path=/stu/**,/
+        - id: web-classes
+          uri: lb://web-classes
+          predicates:
+            - Path=/cls/**

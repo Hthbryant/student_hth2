@@ -1,0 +1,11 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: web-classes
+  datasource:
+    url: jdbc:mysql:///clsdb1906?serverTimezone=UTC
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
+
